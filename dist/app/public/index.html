@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Salarium Auto Login</title>
+    <!-- Include eel.js - note this file doesn't exist in the 'web' directory -->
+    <link href="./materialize/materialize.min.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+
+  <body style="border: 1px solid black; height: fit-content; overflow: hidden; ">
+    <div
+      class="p-10 blue-grey darken-4 mx-1 pywebview-drag-region"
+      style="
+        height: fit-content;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
+      "
+    >
+      <p class="white-text" style="margin-right: auto; padding-left: 1rem">
+        Salarium Auto Login
+      </p>
+      <button class="btn blue darken-4 btn-small">Mininmize</button>
+      <button class="btn red darken-4 btn-small" style="margin-right: 1rem">
+        close
+      </button>
+    </div>
+    <nav class="col blue-grey darken-3 s12 text-center">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">Salarium Scheduler</a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 center-align">
+          <h2>Log-In</h2>
+        </div>
+      </div>
+      <!--time-in-->
+      <div class="row">
+        <div class="col s12 center-align">
+          <div class="input-field col s6 offset-s3">
+            <input id="time-in" type="text" class="validate" />
+            <label for="time-in">Email</label>
+          </div>
+        </div>
+      </div>
+      <!--time-out-->
+      <div class="row">
+        <div class="col s12 center-align">
+          <div class="input-field col s6 offset-s3">
+            <input id="time-out" type="text" class="validate" />
+            <label for="time-out">Password</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 center-align">
+          <button class="btn blue-grey darken-2" id="btn-login">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer blue-grey darken-3" >
+      <div class="footer-copyright blue-grey darken-4">
+            <div class="container">
+            © 2022 Salarium Scheduler
+            <a class="grey-text text-lighten-4 right" href="https://romanaugusto.tk" target="_blank">Roman Cabalum</a>
+            </div>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="./materialize/materialize.min.js"
+    ></script>
+    <script>
+      const closeBtn = document.querySelectorAll(".btn")[1];
+      const minBtn = document.querySelectorAll(".btn")[0];
+      const body = document.querySelector("body");
+
+      closeBtn.onclick = () => {
+        pywebview.api.windowClose();
+      };
+      minBtn.onclick = () => {
+        pywebview.api.windowMinimize();
+      };
+    </script>
+  </body>
+</html>
