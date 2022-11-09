@@ -15,3 +15,10 @@
     <li>Build: pyinstaller app.spec</li>
     <li>Note: you can add resouce dependencies by modifying spec file.</li>
 </ul>
+
+
+<h2>Dependencies</h2>
+<ul>
+    <a href = "https://github.com/r0x0r/pywebview">Pywebview</a>
+    <a href = "https://github.com/Dogfalo/materialize">Materialize CSS </a>
+</ul>
