@@ -35,18 +35,20 @@ exe = EXE(
     upx=False,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=False,
     windowed=True,
+    console=False,
     disable_windowed_traceback=True,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon = "public/Anime-Girl-Face-Meme-PNG-Image.webp"
+    icon = "public/Anime-Girl-Face-Meme-PNG-Image.webp",
+    noarchive = True
 )
 
 
 app = BUNDLE(exe,
     name='myscript.app',
     icon='public/Anime-Girl-Face-Meme-PNG-Image.webp',
-    bundle_identifier=None)
+    bundle_identifier=None,
+    noarchive = True)
