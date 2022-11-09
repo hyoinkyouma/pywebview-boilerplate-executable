@@ -11,6 +11,7 @@
 <ul>
     <li>Make env python3 -m venv ./env</li>
     <li> Install dependencies (pip install -r requirements.txt)</li>
-    <li>Run pyinstaller app.spec</li>
+    <li>Run: python3 app.py</li>
+    <li>Build: pyinstaller app.spec</li>
     <li>Note: you can add resouce dependencies by modifying spec file.</li>
 </ul>
