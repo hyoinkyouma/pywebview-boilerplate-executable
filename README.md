@@ -9,7 +9,7 @@
 
 <h2>Building and Running</h2>
 <ul>
-    <li>Use the ENV! (bash: source ./env/Scripts/Activate)</li>
+    <li>Make env python3 -m venv ./env</li>
     <li> Install dependencies (pip install -r requirements.txt)</li>
     <li>Run pyinstaller app.spec</li>
     <li>Note: you can add resouce dependencies by modifying spec file.</li>
