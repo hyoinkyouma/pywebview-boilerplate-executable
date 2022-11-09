@@ -1,24 +1,23 @@
-<h1>Pywebview Boilerplate</h1>
-<p>Some boiler plate code with materialize css<p>
+# Pywebview Boilerplate
+Some boiler plate code with materialize css
 
-<h2>How to use</h2>
-<ul>
-    <li>Public folder: HTML and CSS for front-end</li>
-    <li>app.py: main app entry point</li>
-</ul>
-
-<h2>Building and Running</h2>
-<ul>
-    <li>Make env (python3 -m venv ./env)</li>
-    <li> Install dependencies (pip install -r requirements.txt)</li>
-    <li>Run: python3 app.py</li>
-    <li>Build: pyinstaller app.spec</li>
-    <li>Note: you can add resouce dependencies by modifying spec file.</li>
-</ul>
+## How to use
+ - Public folder: HTML and CSS for front-end
+ - app.py: main app entry point
 
 
-<h2>Dependencies</h2>
-<ul>
-    <li><a href = "https://github.com/r0x0r/pywebview">Pywebview</a></li>
-    <li><a href = "https://github.com/Dogfalo/materialize">Materialize CSS </a></li>
-</ul>
+## Building and Running
+- Make env:
+    <code>python3 -m venv ./env</code>
+- Install dependencies 
+    <code>pip install -r requirements.txt</code>
+- Run: 
+    <code>python3 app.py</code>
+- Build: 
+    <code>pyinstaller app.spec</code>
+- Note: you can add resouce dependencies by modifying spec file.
+
+
+## Dependencies
+- <a href = "https://github.com/r0x0r/pywebview">Pywebview</a>
+- <a href = "https://github.com/Dogfalo/materialize">Materialize CSS </a>
