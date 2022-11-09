@@ -19,6 +19,6 @@
 
 <h2>Dependencies</h2>
 <ul>
-    <a href = "https://github.com/r0x0r/pywebview">Pywebview</a>
-    <a href = "https://github.com/Dogfalo/materialize">Materialize CSS </a>
+    <li><a href = "https://github.com/r0x0r/pywebview">Pywebview</a></li>
+    <li><a href = "https://github.com/Dogfalo/materialize">Materialize CSS </a></li>
 </ul>
