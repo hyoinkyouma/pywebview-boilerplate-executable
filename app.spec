@@ -50,6 +50,6 @@ exe = EXE(
 
 app = BUNDLE(exe,
     name='myscript.app',
-    icon=None,
+    icon='public/Anime-Girl-Face-Meme-PNG-Image.webp',
     bundle_identifier=None)
 
