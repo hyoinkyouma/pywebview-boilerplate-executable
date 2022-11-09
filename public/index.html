@@ -21,8 +21,8 @@
       <p class="white-text" style="margin-right: auto; padding-left: 1rem">
         Salarium Auto Login
       </p>
-      <button class="btn blue darken-4 btn-small">Mininmize</button>
-      <button class="btn red darken-4 btn-small" style="margin-right: 1rem">
+      <button class="btn blue darken-4 btn-small hoverable">Mininmize</button>
+      <button class="btn red darken-4 btn-small hoverable" style="margin-right: 1rem">
         close
       </button>
     </div>
@@ -41,8 +41,8 @@
       <div class="row">
         <div class="col s12 center-align">
           <div class="input-field col s6 offset-s3">
-            <input id="time-in" type="text" class="validate" />
-            <label for="time-in">Email</label>
+            <input id="email" type="text" class="validate" />
+            <label for="email">Email</label>
           </div>
         </div>
       </div>
@@ -50,8 +50,8 @@
       <div class="row">
         <div class="col s12 center-align">
           <div class="input-field col s6 offset-s3">
-            <input id="time-out" type="text" class="validate" />
-            <label for="time-out">Password</label>
+            <input id="password" type="password" class="validate" />
+            <label for="password">Password</label>
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@
       </div>
     </div>
 
-    <footer class="page-footer blue-grey darken-3" >
+    <footer class="page-footer blue-grey darken-3 bottom-0">
       <div class="footer-copyright blue-grey darken-4">
             <div class="container">
             © 2022 Salarium Scheduler
@@ -78,6 +78,9 @@
       const closeBtn = document.querySelectorAll(".btn")[1];
       const minBtn = document.querySelectorAll(".btn")[0];
       const body = document.querySelector("body");
+      const nextBtn = document.querySelectorAll(".btn")[2];
+      const emailInput = document.getElementById("email");
+      const passwordInput = document.getElementById("password")
 
       closeBtn.onclick = () => {
         pywebview.api.windowClose();
@@ -85,6 +88,10 @@
       minBtn.onclick = () => {
         pywebview.api.windowMinimize();
       };
+
+      nextBtn.onclick = () => {
+        pywebview.api.setLogin(emailInput.value.toString(), passwordInput.value.toString())
+      }
     </script>
   </body>
 </html>

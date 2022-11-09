@@ -3,18 +3,12 @@
 
 block_cipher = None
 
-added_files = [
-    ( './public/index.html', './public' ),
-    ('./public/materialize/materialize.min.js', './public/materialize'),
-    ('./public/materialize/materialize.min.css', './public/materialize')
 
-    ]
 a = Analysis(
     ['app.py'],
-
     pathex=[],
     binaries=[],
-    datas=added_files,
+    datas=[],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -23,34 +17,32 @@ a = Analysis(
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
     cipher=block_cipher,
-    noarchive=False,
+    noarchive=False
 )
+
+a.datas += Tree('./public', prefix ='./public')
+
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 exe = EXE(
     pyz,
     a.scripts,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
     [],
-    exclude_binaries=True,
     name='app',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=True,
-    disable_windowed_traceback=False,
+    upx_exclude=[],
+    runtime_tmpdir=None,
+    console=False,
+    windowed=True,
+    disable_windowed_traceback=True,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-)
-coll = COLLECT(
-    exe,
-    a.binaries,
-    a.zipfiles,
-    a.datas,
-    strip=False,
-    upx=True,
-    upx_exclude=[],
-    name='app',
 )

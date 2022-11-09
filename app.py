@@ -4,6 +4,8 @@ import os
 class Api:
     def __init__(self):
         self._window = None
+        self.email = None
+        self.password = None
 
     def set_window(self, window):
         self._window = window
@@ -13,7 +15,11 @@ class Api:
     
     def windowMinimize(self):
         self._window.minimize()
-
+    
+    def setLogin (self, email, password):
+        self.email = email
+        self.password = password
+        print(self.email, self.password)
 
 if __name__ == '__main__':
     api = Api()
