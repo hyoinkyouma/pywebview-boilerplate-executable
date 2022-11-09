@@ -17,7 +17,7 @@ a = Analysis(
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
     cipher=block_cipher,
-    noarchive=False
+    noarchive=False,
 )
 
 a.datas += Tree('./public', prefix ='./public')
@@ -45,6 +45,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon = "public/Anime-Girl-Face-Meme-PNG-Image.webp"
 )
 
 
