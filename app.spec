@@ -31,7 +31,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='app',
+    name='Boilerplate App',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -46,3 +46,10 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
 )
+
+
+app = BUNDLE(exe,
+    name='myscript.app',
+    icon=None,
+    bundle_identifier=None)
+
