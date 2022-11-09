@@ -10,7 +10,7 @@ const getSystemInfo = async () => {
         item.textContent = `${key.toUpperCase()}: ${systemInfoItems[key]}`
         systemInfoList.append(item)
     })
-    systemInfo
+    systemInfo.textContent = ""
     systemInfo.append(systemInfoList)
 }
 

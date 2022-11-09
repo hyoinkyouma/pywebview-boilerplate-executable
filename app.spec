@@ -1,12 +1,9 @@
-# -*- mode: python ; coding: utf-8 -*-
-
-
 block_cipher = None
 
 
 a = Analysis(
     ['app.py'],
-    pathex=[],
+    pathex=["./env/lib/python3.10/site-packages"],
     binaries=[],
     datas=[],
     hiddenimports=[],
@@ -17,7 +14,7 @@ a = Analysis(
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
     cipher=block_cipher,
-    noarchive=False,
+    noarchive=True,
 )
 
 a.datas += Tree('./public', prefix ='./public')
@@ -35,7 +32,7 @@ exe = EXE(
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
-    upx=True,
+    upx=False,
     upx_exclude=[],
     runtime_tmpdir=None,
     console=False,
@@ -53,4 +50,3 @@ app = BUNDLE(exe,
     name='myscript.app',
     icon='public/Anime-Girl-Face-Meme-PNG-Image.webp',
     bundle_identifier=None)
-

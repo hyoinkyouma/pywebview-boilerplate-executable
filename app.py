@@ -30,6 +30,6 @@ class Api:
 
 if __name__ == '__main__':
     api = Api()
-    window = webview.create_window('Salarium','./public/index.html', frameless=False, easy_drag=True, js_api=api)
+    window = webview.create_window('Boilerplate App','./public/index.html', frameless=False, easy_drag=True, js_api=api)
     api.set_window(window)
     webview.start(debug=True)
