@@ -2,74 +2,17 @@
 <html>
   <head>
     <title>Salarium Auto Login</title>
-    <!-- Include eel.js - note this file doesn't exist in the 'web' directory -->
     <link href="./materialize/materialize.min.css" rel="stylesheet" />
     <link href="./style.css" rel="stylesheet" />
   </head>
-
-  <body style="border: 1px solid black; height: fit-content; overflow: hidden; ">
-    <div
-      class="p-10 blue-grey darken-4 mx-1 pywebview-drag-region"
-      style="
-        height: fit-content;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 1rem;
-      "
-    >
-      <p class="white-text" style="margin-right: auto; padding-left: 1rem">
-        Salarium Auto Login
-      </p>
-      <button class="btn blue darken-4 btn-small hoverable">Mininmize</button>
-      <button class="btn red darken-4 btn-small hoverable" style="margin-right: 1rem">
-        close
-      </button>
-    </div>
-    <nav class="col blue-grey darken-3 s12 text-center">
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo center">Salarium Scheduler</a>
-      </div>
-    </nav>
-    <div class="container">
-      <div class="row">
-        <div class="col s12 center-align">
-          <h2>Log-In</h2>
-        </div>
-      </div>
-      <!--time-in-->
-      <div class="row">
-        <div class="col s12 center-align">
-          <div class="input-field col s6 offset-s3">
-            <input id="email" type="text" class="validate" />
-            <label for="email">Email</label>
-          </div>
-        </div>
-      </div>
-      <!--time-out-->
-      <div class="row">
-        <div class="col s12 center-align">
-          <div class="input-field col s6 offset-s3">
-            <input id="password" type="password" class="validate" />
-            <label for="password">Password</label>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 center-align">
-          <button class="btn blue-grey darken-2" id="btn-login">Next</button>
-        </div>
+  <body scroll="no">
+    <div class="container blue-grey darken-4 white-text">
+      <h1 class="scale-transition scale-out">Hello Webview!</h1>
+      <div id="system-info" class="scale-transition scale-out ">Retrieving System Info</div>
+      <div>
+      <button id="close-btn" class="scale-transition scale-out waves-effect waves-light btn">Close</button>
       </div>
     </div>
-
-    <footer class="page-footer blue-grey darken-3 bottom-0">
-      <div class="footer-copyright blue-grey darken-4">
-            <div class="container">
-            © 2022 Salarium Scheduler
-            <a class="grey-text text-lighten-4 right" href="https://romanaugusto.tk" target="_blank">Roman Cabalum</a>
-            </div>
-    </footer>
-
     <script
       type="text/javascript"
       src="./materialize/materialize.min.js"

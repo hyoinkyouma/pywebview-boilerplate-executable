@@ -1,17 +1,39 @@
-const closeBtn = document.querySelectorAll(".btn")[1];
-const minBtn = document.querySelectorAll(".btn")[0];
-const body = document.querySelector("body");
-const nextBtn = document.querySelectorAll(".btn")[2];
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password")
+const systemInfo = document.getElementById("system-info")
+const closeBtn = document.getElementById("close-btn")
+const h1 = document.querySelector("h1")
 
-closeBtn.onclick = () => {
-  pywebview.api.windowClose();
-};
-minBtn.onclick = () => {
-  pywebview.api.windowMinimize();
-};
-
-nextBtn.onclick = () => {
-  pywebview.api.setLogin(emailInput.value.toString(), passwordInput.value.toString())
+const getSystemInfo = async () => {
+    const systemInfoItems = JSON.parse(await pywebview.api.get_system_info())
+    const systemInfoList = document.createElement("ul")
+    Object.keys(systemInfoItems).forEach((key) => {
+        const item = document.createElement("li")
+        item.textContent = `${key.toUpperCase()}: ${systemInfoItems[key]}`
+        systemInfoList.append(item)
+    })
+    systemInfo
+    systemInfo.append(systemInfoList)
 }
+
+const scaleEffect = ({timeout= 200}) => {
+    setTimeout (() => {
+        h1.classList.remove("scale-out")
+    }, timeout)
+    setTimeout(()=> {
+        systemInfo.classList.remove("scale-out")
+    }, timeout*2)
+    setTimeout(()=> {
+        closeBtn.classList.remove("scale-out")
+    }, timeout*3)
+}
+
+
+const main = async () => {
+    closeBtn.onclick = () => {
+        pywebview.api.window_close()
+    }
+   await getSystemInfo()
+   scaleEffect({timeout: 250})
+}
+window.addEventListener('pywebviewready', () => {
+    main()
+})
